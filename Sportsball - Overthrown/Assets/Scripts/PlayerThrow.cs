@@ -12,17 +12,13 @@ public class PlayerThrow : MonoBehaviour
     public Slider chargeSlider;
 
     public bool hasBall;
-    public GameObject currentBall;
+    private GameObject currentBall;
     Rigidbody ballBody;
+    public Vector3 ballHoldPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        //testing variables: for before we can actually pick things up
-        ballBody = currentBall.GetComponent<Rigidbody>();
-        ballBody.useGravity = false;
-        hasBall = true;
-
         chargeSlider.value = 0;
     }
 
@@ -32,25 +28,44 @@ public class PlayerThrow : MonoBehaviour
         Controls();
     }
 
-    void Controls()
+    void Cursor()
     {
-        if (Input.GetMouseButton(0))
+        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo);
+        if (hit)
         {
-            print("Holding button");
-            if (hasBall)
+            if (hitInfo.transform.gameObject.CompareTag("Ball"))
             {
-                chargingThrow = true;
-                StartCoroutine(ChargeThrow());
+                Debug.Log("It's working!");
+                if(Input.GetMouseButtonDown(1) && !hasBall)
+                {
+                    PickUpBall(hitInfo.transform.gameObject);
+                    print("Clicked on a ball");
+                }
             }
         }
-        if (Input.GetMouseButtonUp(0))
+    }
+
+    void Controls()
+    {
+        if(hasBall)
         {
-            if (hasBall)
+            if (Input.GetMouseButton(0))
+            {
+                print("Holding button");
+
+                chargingThrow = true;
+                StartCoroutine(ChargeThrow());
+                
+            }
+            if (Input.GetMouseButtonUp(0))
             {
                 chargingThrow = false;
                 ThrowBall();
             }
         }
+
+        Cursor();
+        
     }
 
     /// <summary>
@@ -61,6 +76,11 @@ public class PlayerThrow : MonoBehaviour
         hasBall = true;
         currentBall = newBall;
         ballBody = currentBall.GetComponent<Rigidbody>();
+
+        ballBody.isKinematic = true;
+        ballBody.useGravity = false;
+        currentBall.transform.parent = transform;
+        currentBall.transform.localPosition = ballHoldPos;
     }
 
     IEnumerator ChargeThrow()
@@ -87,9 +107,12 @@ public class PlayerThrow : MonoBehaviour
     void ThrowBall()
     {
         print("Throwing ball");
+        ballBody.isKinematic = false;
         ballBody.useGravity = true;
 
-        ballBody.AddRelativeForce(Vector3.forward * currentThrowForce * Time.deltaTime * 1000);
+        currentBall.transform.parent = null;
+
+        ballBody.AddRelativeForce(Vector3.forward * currentThrowForce * Time.deltaTime * 10);
         currentThrowForce = minThrowForce;
 
 
