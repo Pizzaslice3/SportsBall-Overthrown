@@ -1083,7 +1083,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 712548306}
-  - component: {fileID: 712548304}
   - component: {fileID: 712548309}
   - component: {fileID: 712548308}
   - component: {fileID: 712548307}
@@ -1095,14 +1094,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &712548304
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712548303}
-  m_Enabled: 1
 --- !u!114 &712548305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,9 +1552,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasHitPlayer: 0
   ragdoll: {fileID: 27623269}
-  ragdollAnimator: {fileID: 127325326}
   ragdollThings: {fileID: 1326514405}
-  player: {fileID: 657471660}
+  ragdollAnimator: {fileID: 127325326}
+  ragdollForceDirection: {x: 0, y: 1.4, z: -0.7}
+  ragdollForce: 300
 --- !u!1 &1326514405
 GameObject:
   m_ObjectHideFlags: 0
