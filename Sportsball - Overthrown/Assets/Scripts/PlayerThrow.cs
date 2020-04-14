@@ -12,12 +12,17 @@ public class PlayerThrow : MonoBehaviour
     public Slider chargeSlider;
 
     public bool hasBall;
-    GameObject currentBall;
+    public GameObject currentBall;
     Rigidbody ballBody;
 
     // Start is called before the first frame update
     void Start()
     {
+        //testing variables: for before we can actually pick things up
+        ballBody = currentBall.GetComponent<Rigidbody>();
+        ballBody.useGravity = false;
+        hasBall = true;
+
         chargeSlider.value = 0;
     }
 
@@ -81,10 +86,19 @@ public class PlayerThrow : MonoBehaviour
     /// </summary>
     void ThrowBall()
     {
-        //hasBall = false;
-        //ballBody.AddForce(Vector3.forward * currentThrowForce * Time.deltaTime);
+        print("Throwing ball");
+        ballBody.useGravity = true;
+
+        ballBody.AddRelativeForce(Vector3.forward * currentThrowForce * Time.deltaTime * 1000);
         currentThrowForce = minThrowForce;
+
+
         chargeSliderValue = (currentThrowForce - minThrowForce) / (maxThrowForce - minThrowForce);
         chargeSlider.value = chargeSliderValue;
+
+        currentBall = null;
+        ballBody = null;
+        hasBall = false;
+
     }
 }
