@@ -8,6 +8,8 @@ public class PlayerThrow : MonoBehaviour
     public float chargeSpeed;
     public bool chargingThrow;
 
+    public GameObject playerCam;
+
     private float chargeSliderValue;
     public Slider chargeSlider;
 
@@ -79,7 +81,7 @@ public class PlayerThrow : MonoBehaviour
 
         ballBody.isKinematic = true;
         ballBody.useGravity = false;
-        currentBall.transform.parent = transform;
+        currentBall.transform.parent = playerCam.transform;
         currentBall.transform.localPosition = ballHoldPos;
     }
 
@@ -112,7 +114,10 @@ public class PlayerThrow : MonoBehaviour
 
         currentBall.transform.parent = null;
 
-        ballBody.AddRelativeForce(Vector3.forward * currentThrowForce * Time.deltaTime * 10);
+        Vector3 throwDirection = Vector3.forward;
+        throwDirection = Camera.main.transform.TransformDirection(throwDirection);
+
+        ballBody.AddForce(throwDirection * currentThrowForce * Time.deltaTime * 10);
         currentThrowForce = minThrowForce;
 
 
