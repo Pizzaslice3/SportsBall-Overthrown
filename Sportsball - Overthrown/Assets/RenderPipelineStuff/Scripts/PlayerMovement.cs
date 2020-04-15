@@ -79,7 +79,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!_inAir)
         {
+            print("we jumpin");
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _inAir = false;
         }
     }
 }
