@@ -15,7 +15,7 @@ public class PlayerThrow : MonoBehaviour
 
     public float pickUpRange = 2f;
     public bool hasBall;
-    private GameObject currentBall;
+    private Dodgeball currentBall;
     Rigidbody ballBody;
     public Vector3 ballHoldPos;
 
@@ -91,8 +91,8 @@ public class PlayerThrow : MonoBehaviour
     void PickUpBall(GameObject newBall)
     {
         hasBall = true;
-        currentBall = newBall;
-        ballBody = currentBall.GetComponent<Rigidbody>();
+        currentBall = newBall.GetComponent<Dodgeball>();
+        ballBody = currentBall.rb;
 
         ballBody.isKinematic = true;
         ballBody.useGravity = false;

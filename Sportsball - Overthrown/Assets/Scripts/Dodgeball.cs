@@ -7,19 +7,28 @@ public class Dodgeball : MonoBehaviour
     public GameObject lastThrownBy;
     private Vector3 originPos;
 
+    public Rigidbody rb;
     public bool alive;
     private int numberOfPlayersHit;
     private GameObject[] playersHit;
 
-    // Start is called before the first frame update
     void Start()
     {
         originPos = transform.position;
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Respawn()
     {
-        
+        transform.position = originPos;
+        rb.velocity = Vector3.zero;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Respawn"))
+        {
+            Respawn();
+        }
     }
 }
