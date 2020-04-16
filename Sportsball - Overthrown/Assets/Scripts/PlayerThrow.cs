@@ -17,6 +17,7 @@ public class PlayerThrow : MonoBehaviour
     public bool hasBall;
     private Dodgeball currentBall;
     Rigidbody ballBody;
+    private SphereCollider ballCollider;
     public Vector3 ballHoldPos;
 
     public Image reticle;
@@ -93,9 +94,12 @@ public class PlayerThrow : MonoBehaviour
         hasBall = true;
         currentBall = newBall.GetComponent<Dodgeball>();
         ballBody = currentBall.rb;
+        ballCollider = newBall.GetComponent<SphereCollider>();
 
         ballBody.isKinematic = true;
         ballBody.useGravity = false;
+        ballCollider.enabled = false;
+
         currentBall.transform.parent = playerCam.transform;
         currentBall.transform.localPosition = ballHoldPos;
 
@@ -126,22 +130,26 @@ public class PlayerThrow : MonoBehaviour
     {
         print("Throwing ball");
         ballBody.isKinematic = false;
-        ballBody.useGravity = true;
 
-        currentBall.transform.localPosition = Vector3.zero;
-        currentBall.transform.parent = null;
+        currentBall.transform.localPosition = new Vector3(0,0,2);
+        
 
         Vector3 throwDirection = Vector3.forward;
         throwDirection = Camera.main.transform.TransformDirection(throwDirection);
 
         ballBody.AddForce(throwDirection * currentThrowForce * Time.deltaTime * 10);
+
+        ballBody.useGravity = true;
+        ballCollider.enabled = true;
+
+        currentBall.transform.parent = null;
         currentThrowForce = minThrowForce;
 
 
         chargeSliderValue = (currentThrowForce - minThrowForce) / (maxThrowForce - minThrowForce);
         chargeSlider.value = chargeSliderValue;
 
-
+        ballCollider = null;
         currentBall = null;
         ballBody = null;
         hasBall = false;
