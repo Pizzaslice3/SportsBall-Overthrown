@@ -13,15 +13,20 @@ public class PlayerThrow : MonoBehaviour
     private float chargeSliderValue;
     public Slider chargeSlider;
 
+    public float pickUpRange = 2f;
     public bool hasBall;
     private GameObject currentBall;
     Rigidbody ballBody;
     public Vector3 ballHoldPos;
 
+    public Image reticle;
+    public Color defaultRetColor, selectedRetColor,enemyRetColor;
+
     // Start is called before the first frame update
     void Start()
     {
         chargeSlider.value = 0;
+        //reticle.color = defaultRetColor;
     }
 
     // Update is called once per frame
@@ -32,18 +37,28 @@ public class PlayerThrow : MonoBehaviour
 
     void Cursor()
     {
-        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo);
+        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo,pickUpRange);
         if (hit)
         {
             if (hitInfo.transform.gameObject.CompareTag("Ball"))
             {
-                Debug.Log("It's working!");
-                if(Input.GetMouseButtonDown(1) && !hasBall)
+                reticle.color = selectedRetColor;
+
+                if (Input.GetMouseButtonDown(1) && !hasBall)
                 {
                     PickUpBall(hitInfo.transform.gameObject);
                     print("Clicked on a ball");
                 }
             }
+            else
+            {
+                reticle.color = defaultRetColor;
+            }
+        }
+        else
+        {
+            reticle.color = defaultRetColor;
+
         }
     }
 
@@ -83,6 +98,7 @@ public class PlayerThrow : MonoBehaviour
         ballBody.useGravity = false;
         currentBall.transform.parent = playerCam.transform;
         currentBall.transform.localPosition = ballHoldPos;
+
     }
 
     IEnumerator ChargeThrow()
@@ -112,6 +128,7 @@ public class PlayerThrow : MonoBehaviour
         ballBody.isKinematic = false;
         ballBody.useGravity = true;
 
+        currentBall.transform.localPosition = Vector3.zero;
         currentBall.transform.parent = null;
 
         Vector3 throwDirection = Vector3.forward;
@@ -123,6 +140,7 @@ public class PlayerThrow : MonoBehaviour
 
         chargeSliderValue = (currentThrowForce - minThrowForce) / (maxThrowForce - minThrowForce);
         chargeSlider.value = chargeSliderValue;
+
 
         currentBall = null;
         ballBody = null;
