@@ -5,10 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/RenderPipelineStuff/rp_Scenes/SampleScene.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
-    path: Assets/scenes/gameplay.unity
-    guid: 39693d100036c014887141e3cab46d55
+    path: Assets/scenes/Joey2.0.unity
+    guid: 40e734934e2f5994d99df73d2a53edb4
   m_configObjects: {}

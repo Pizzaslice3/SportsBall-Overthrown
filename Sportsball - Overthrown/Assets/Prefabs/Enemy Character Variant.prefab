@@ -25,9 +25,23 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.073972166
-  m_Height: 2.0094466
+  m_Height: 1.8111234
   m_Direction: 1
-  m_Center: {x: 0, y: 0.80761576, z: -0.021074474}
+  m_Center: {x: 0, y: 0.9067774, z: -0.021074474}
+--- !u!114 &-1210232176974824967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448002545527807418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ec7bdd47ed84942a3bc70f6becc7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topHalf: {fileID: 2057123253}
+  bottomHalf: {fileID: 2057123254}
 --- !u!1001 &8437057290110534835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,7 +107,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 9a566f4776ac2ef4c9ff8a741ca8d376,
         type: 3}
       propertyPath: m_Name
-      value: Enemy Character
+      value: Enemy Character Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a566f4776ac2ef4c9ff8a741ca8d376, type: 3}
