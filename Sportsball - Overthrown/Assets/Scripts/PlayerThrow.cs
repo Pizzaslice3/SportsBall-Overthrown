@@ -4,22 +4,32 @@ using UnityEngine.UI;
 
 public class PlayerThrow : MonoBehaviour
 {
-    public float currentThrowForce, minThrowForce, maxThrowForce;
+    [Header("The basics")]
+    public float currentThrowForce;
     public float chargeSpeed;
-    public bool chargingThrow;
+    public float throwForce;
+    public float throwMod;
 
-    public GameObject playerCam;
-
-    private float chargeSliderValue;
+    [Header("Charge Bar")]
     public Slider chargeSlider;
+    public Image chargeColor;
+    public Color pChargeCol, okChargeCol;
+    private bool chargingUp, chargingDown;
+    private float chargeSliderValue;
+    public float sweetSpotMin = 70;
+    public float sweetSpotMax = 90;
 
-    public float pickUpRange = 2f;
+    [Header("Ball Related")]
+
     public bool hasBall;
     private Dodgeball currentBall;
     Rigidbody ballBody;
     private SphereCollider ballCollider;
     public Vector3 ballHoldPos;
 
+    [Header("UI")]
+    public GameObject playerCam;
+    public float pickUpRange = 2f;
     public Image reticle;
     public Color defaultRetColor, selectedRetColor,enemyRetColor;
 
@@ -67,17 +77,13 @@ public class PlayerThrow : MonoBehaviour
     {
         if(hasBall)
         {
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonDown(0))
             {
-                print("Holding button");
-
-                chargingThrow = true;
+                chargingUp = true;
                 StartCoroutine(ChargeThrow());
-                
             }
             if (Input.GetMouseButtonUp(0))
             {
-                chargingThrow = false;
                 ThrowBall();
             }
         }
@@ -107,19 +113,53 @@ public class PlayerThrow : MonoBehaviour
 
     IEnumerator ChargeThrow()
     {
-        while (chargingThrow)
+        
+
+        while (Input.GetMouseButton(0))
         {
-            if (currentThrowForce < maxThrowForce)
+            //determine which direction the bar should go in
+            if (currentThrowForce >= 100)
+            {
+                print("Topped off");
+                currentThrowForce = 100;
+                chargingUp = false;
+                chargingDown = true;
+            }
+            else if (currentThrowForce <= 0)
+            {
+                print("Bottomed out");
+
+                currentThrowForce = 0;
+                chargingUp = true;
+                chargingDown = false;
+            }
+
+            //actually changes value of currentThrowForce
+            if (chargingUp)
             {
                 currentThrowForce += chargeSpeed;
+                print("Charging up: " + currentThrowForce);
+            }
+            else if(chargingDown)
+            {
+                print("Charging down: " + currentThrowForce);
+                currentThrowForce -= chargeSpeed ;
+            }
+
+            //translates value visually
+            chargeSliderValue = currentThrowForce / 100;
+            chargeSlider.value = chargeSliderValue;
+
+            if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
+            {
+                chargeColor.color = pChargeCol;
             }
             else
             {
-                currentThrowForce = maxThrowForce;
+                chargeColor.color = okChargeCol;
             }
-            chargeSliderValue = (currentThrowForce - minThrowForce) / (maxThrowForce - minThrowForce);
-            chargeSlider.value = chargeSliderValue;
-            yield return 0;
+
+                yield return 0;
         }
     }
 
@@ -132,21 +172,29 @@ public class PlayerThrow : MonoBehaviour
         ballBody.isKinematic = false;
 
         currentBall.transform.localPosition = new Vector3(0,0,2);
-        
 
         Vector3 throwDirection = Vector3.forward;
         throwDirection = Camera.main.transform.TransformDirection(throwDirection);
 
-        ballBody.AddForce(throwDirection * currentThrowForce * Time.deltaTime * 10);
+        if(currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
+        {
+            ballBody.AddForce(throwDirection * throwForce * throwMod * Time.deltaTime * 100);
+
+        }
+        else
+        {
+            ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
+        }
+
 
         ballBody.useGravity = true;
         ballCollider.enabled = true;
 
         currentBall.transform.parent = null;
-        currentThrowForce = minThrowForce;
+        currentThrowForce = 0;
 
 
-        chargeSliderValue = (currentThrowForce - minThrowForce) / (maxThrowForce - minThrowForce);
+        chargeSliderValue = currentThrowForce / 100;
         chargeSlider.value = chargeSliderValue;
 
         ballCollider = null;
