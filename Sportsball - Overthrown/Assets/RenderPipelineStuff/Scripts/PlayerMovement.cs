@@ -32,7 +32,25 @@ public class PlayerMovement : MonoBehaviour
     public void Update()
     {
         MovePlayer();
+
+        int layerMask = 1 << 5;
+        layerMask = ~layerMask;
+
+        RaycastHit hit;
+
+        // This would cast rays only against colliders in layer 8.
+        // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+        
+
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1.2f, layerMask))
+        {
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
+            _inAir = false;
+            Debug.Log("Did Hit");
+        }
+       
     }
+
 
     //if the player collides with anything they can now jump (make collision only for ground objects
     private void OnCollisionEnter(Collision other)
@@ -80,8 +98,9 @@ public class PlayerMovement : MonoBehaviour
         if (!_inAir)
         {
             print("we jumpin");
-            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             _inAir = false;
+            _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            
         }
     }
 }
