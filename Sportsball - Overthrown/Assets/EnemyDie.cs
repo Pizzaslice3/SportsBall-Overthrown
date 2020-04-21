@@ -22,7 +22,7 @@ public class EnemyDie : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Ball")
+        if(other.gameObject.CompareTag("Ball"))
         {
             Rigidbody rb = gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
 

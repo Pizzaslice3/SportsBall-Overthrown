@@ -31,13 +31,16 @@ public class PlayerThrow : MonoBehaviour
     public GameObject playerCam;
     public float pickUpRange = 2f;
     public Image reticle;
-    public Color defaultRetColor, selectedRetColor,enemyRetColor;
+    public Color defaultRetColor, selectedRetColor, enemyRetColor;
 
     // Start is called before the first frame update
     void Start()
     {
         chargeSlider.value = 0;
-        //reticle.color = defaultRetColor;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        reticle.color = defaultRetColor;
     }
 
     // Update is called once per frame
@@ -46,9 +49,9 @@ public class PlayerThrow : MonoBehaviour
         Controls();
     }
 
-    void Cursor()
+    void Reticle()
     {
-        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo,pickUpRange);
+        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo, pickUpRange);
         if (hit)
         {
             if (hitInfo.transform.gameObject.CompareTag("Ball"))
@@ -75,7 +78,7 @@ public class PlayerThrow : MonoBehaviour
 
     void Controls()
     {
-        if(hasBall)
+        if (hasBall)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -88,8 +91,8 @@ public class PlayerThrow : MonoBehaviour
             }
         }
 
-        Cursor();
-        
+        Reticle();
+
     }
 
     /// <summary>
@@ -108,12 +111,17 @@ public class PlayerThrow : MonoBehaviour
 
         currentBall.transform.parent = playerCam.transform;
         currentBall.transform.localPosition = ballHoldPos;
+        currentBall.AssignPlayer(this);
+
+
+        //Only for playtest!!!
+        throwForce = currentBall.myForce;
 
     }
 
     IEnumerator ChargeThrow()
     {
-        
+
 
         while (Input.GetMouseButton(0))
         {
@@ -140,10 +148,10 @@ public class PlayerThrow : MonoBehaviour
                 currentThrowForce += chargeSpeed;
                 print("Charging up: " + currentThrowForce);
             }
-            else if(chargingDown)
+            else if (chargingDown)
             {
                 print("Charging down: " + currentThrowForce);
-                currentThrowForce -= chargeSpeed ;
+                currentThrowForce -= chargeSpeed;
             }
 
             //translates value visually
@@ -159,7 +167,7 @@ public class PlayerThrow : MonoBehaviour
                 chargeColor.color = okChargeCol;
             }
 
-                yield return 0;
+            yield return 0;
         }
     }
 
@@ -171,12 +179,12 @@ public class PlayerThrow : MonoBehaviour
         print("Throwing ball");
         ballBody.isKinematic = false;
 
-        currentBall.transform.localPosition = new Vector3(0,0,2);
+        currentBall.transform.localPosition = new Vector3(0, 0, 2);
 
         Vector3 throwDirection = Vector3.forward;
         throwDirection = Camera.main.transform.TransformDirection(throwDirection);
 
-        if(currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
+        if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
         {
             ballBody.AddForce(throwDirection * throwForce * throwMod * Time.deltaTime * 100);
 
@@ -203,4 +211,6 @@ public class PlayerThrow : MonoBehaviour
         hasBall = false;
 
     }
+
+
 }

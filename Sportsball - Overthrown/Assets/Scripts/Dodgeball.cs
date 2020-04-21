@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Dodgeball : MonoBehaviour
 {
-    public GameObject lastThrownBy;
+    public PlayerThrow thrownBy;
     private Vector3 originPos;
 
     public Rigidbody rb;
     public bool alive;
     private int numberOfPlayersHit;
     private GameObject[] playersHit;
+
+    public float myForce = 500;
 
     void Start()
     {
@@ -30,5 +32,10 @@ public class Dodgeball : MonoBehaviour
         {
             Respawn();
         }
+    }
+
+    public void AssignPlayer(PlayerThrow player)
+    {
+        thrownBy = player;
     }
 }

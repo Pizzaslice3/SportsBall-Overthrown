@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private Transform _mainCameraRotation;
+    private Vector3 originPos;
+
 
     [SerializeField]
     private float playerSpeed = 1f;
@@ -22,10 +24,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        originPos = transform.position;
+
         _rigidbody = GetComponent<Rigidbody>();
         _mainCameraRotation = FindObjectOfType<CinemachineBrain>().transform;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        
     }
 
     //calls the MovePlayer() script every frame
@@ -101,6 +104,20 @@ public class PlayerMovement : MonoBehaviour
             _inAir = false;
             _rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             
+        }
+    }
+
+    private void Respawn()
+    {
+        transform.position = originPos;
+        _rigidbody.velocity = Vector3.zero;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Respawn"))
+        {
+            Respawn();
         }
     }
 }

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject titleScreen, controls, credits;
+    public GameObject titleScreen, credits;
 
-    public GameObject controls2, controls3;
+    public GameObject controls, controls2, controls3;
 
     public void Play()
     {
