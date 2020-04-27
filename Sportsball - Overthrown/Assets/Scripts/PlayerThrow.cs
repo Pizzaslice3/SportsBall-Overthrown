@@ -8,23 +8,22 @@ public class PlayerThrow : MonoBehaviour
     public float currentThrowForce;
     public float chargeSpeed;
     public float throwForce;
-    public float throwMod;
+    //public float throwMod;
 
     [Header("Charge Bar")]
-    public Slider chargeSlider;
-    public Image chargeColor;
-    public Color pChargeCol, okChargeCol;
-    private bool chargingUp, chargingDown;
-    private float chargeSliderValue;
-    public float sweetSpotMin = 70;
-    public float sweetSpotMax = 90;
+    //public Slider chargeSlider;
+    //public Image chargeColor;
+    //public Color pChargeCol, okChargeCol;
+    //private bool chargingUp, chargingDown;
+    //private float chargeSliderValue;
+    //public float sweetSpotMin = 70;
+    //public float sweetSpotMax = 90;
 
     [Header("Ball Related")]
 
     public bool hasBall;
     private Dodgeball currentBall;
     Rigidbody ballBody;
-    private SphereCollider ballCollider;
     public Vector3 ballHoldPos;
 
     [Header("UI")]
@@ -36,7 +35,7 @@ public class PlayerThrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chargeSlider.value = 0;
+        //chargeSlider.value = 0;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -57,11 +56,11 @@ public class PlayerThrow : MonoBehaviour
             if (hitInfo.transform.gameObject.CompareTag("Ball"))
             {
                 reticle.color = selectedRetColor;
+                print("I see a ball");
 
                 if (Input.GetMouseButtonDown(1) && !hasBall)
                 {
                     PickUpBall(hitInfo.transform.gameObject);
-                    print("Clicked on a ball");
                 }
             }
             else
@@ -80,12 +79,12 @@ public class PlayerThrow : MonoBehaviour
     {
         if (hasBall)
         {
+            //if (Input.GetMouseButtonDown(0))
+            //{
+            //    chargingUp = true;
+            //    StartCoroutine(ChargeThrow());
+            //}
             if (Input.GetMouseButtonDown(0))
-            {
-                chargingUp = true;
-                StartCoroutine(ChargeThrow());
-            }
-            if (Input.GetMouseButtonUp(0))
             {
                 ThrowBall();
             }
@@ -103,11 +102,9 @@ public class PlayerThrow : MonoBehaviour
         hasBall = true;
         currentBall = newBall.GetComponent<Dodgeball>();
         ballBody = currentBall.rb;
-        ballCollider = newBall.GetComponent<SphereCollider>();
 
         ballBody.isKinematic = true;
         ballBody.useGravity = false;
-        ballCollider.enabled = false;
 
         currentBall.transform.parent = playerCam.transform;
         currentBall.transform.localPosition = ballHoldPos;
@@ -119,57 +116,57 @@ public class PlayerThrow : MonoBehaviour
 
     }
 
-    IEnumerator ChargeThrow()
-    {
+    //IEnumerator ChargeThrow()
+    //{
 
 
-        while (Input.GetMouseButton(0))
-        {
-            //determine which direction the bar should go in
-            if (currentThrowForce >= 100)
-            {
-                print("Topped off");
-                currentThrowForce = 100;
-                chargingUp = false;
-                chargingDown = true;
-            }
-            else if (currentThrowForce <= 0)
-            {
-                print("Bottomed out");
+    //    while (Input.GetMouseButton(0))
+    //    {
+    //        //determine which direction the bar should go in
+    //        if (currentThrowForce >= 100)
+    //        {
+    //            print("Topped off");
+    //            currentThrowForce = 100;
+    //            chargingUp = false;
+    //            chargingDown = true;
+    //        }
+    //        else if (currentThrowForce <= 0)
+    //        {
+    //            print("Bottomed out");
 
-                currentThrowForce = 0;
-                chargingUp = true;
-                chargingDown = false;
-            }
+    //            currentThrowForce = 0;
+    //            chargingUp = true;
+    //            chargingDown = false;
+    //        }
 
-            //actually changes value of currentThrowForce
-            if (chargingUp)
-            {
-                currentThrowForce += chargeSpeed;
-                print("Charging up: " + currentThrowForce);
-            }
-            else if (chargingDown)
-            {
-                print("Charging down: " + currentThrowForce);
-                currentThrowForce -= chargeSpeed;
-            }
+    //        //actually changes value of currentThrowForce
+    //        if (chargingUp)
+    //        {
+    //            currentThrowForce += chargeSpeed;
+    //            print("Charging up: " + currentThrowForce);
+    //        }
+    //        else if (chargingDown)
+    //        {
+    //            print("Charging down: " + currentThrowForce);
+    //            currentThrowForce -= chargeSpeed;
+    //        }
 
-            //translates value visually
-            chargeSliderValue = currentThrowForce / 100;
-            chargeSlider.value = chargeSliderValue;
+    //        //translates value visually
+    //        chargeSliderValue = currentThrowForce / 100;
+    //        chargeSlider.value = chargeSliderValue;
 
-            if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
-            {
-                chargeColor.color = pChargeCol;
-            }
-            else
-            {
-                chargeColor.color = okChargeCol;
-            }
+    //        if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
+    //        {
+    //            chargeColor.color = pChargeCol;
+    //        }
+    //        else
+    //        {
+    //            chargeColor.color = okChargeCol;
+    //        }
 
-            yield return 0;
-        }
-    }
+    //        yield return 0;
+    //    }
+    //}
 
     /// <summary>
     /// Launches the ball in direction camera is facing
@@ -180,32 +177,31 @@ public class PlayerThrow : MonoBehaviour
         ballBody.isKinematic = false;
 
         currentBall.transform.localPosition = new Vector3(0, 0, 2);
+        currentBall.Thrown();
 
         Vector3 throwDirection = Vector3.forward;
-        throwDirection = Camera.main.transform.TransformDirection(throwDirection);
+        _ = Camera.main.transform.TransformDirection(throwDirection);
 
-        if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
-        {
-            ballBody.AddForce(throwDirection * throwForce * throwMod * Time.deltaTime * 100);
+        //if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
+        //{
+        //    ballBody.AddForce(throwDirection * throwForce * throwMod * Time.deltaTime * 100);
 
-        }
-        else
-        {
-            ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
-        }
+        //}
+        //else
+        //{
+        //    ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
+        //}
 
+        ballBody.AddForce(throwDirection * throwForce * Time.deltaTime);
 
         ballBody.useGravity = true;
-        ballCollider.enabled = true;
-
         currentBall.transform.parent = null;
         currentThrowForce = 0;
 
 
-        chargeSliderValue = currentThrowForce / 100;
-        chargeSlider.value = chargeSliderValue;
+        //chargeSliderValue = currentThrowForce / 100;
+        //chargeSlider.value = chargeSliderValue;
 
-        ballCollider = null;
         currentBall = null;
         ballBody = null;
         hasBall = false;

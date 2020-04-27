@@ -13,6 +13,8 @@ public class Dodgeball : MonoBehaviour
     private GameObject[] playersHit;
 
     public float myForce = 500;
+    public SphereCollider realCollider;
+    public SphereCollider pickUpCollider;
 
     void Start()
     {
@@ -37,5 +39,20 @@ public class Dodgeball : MonoBehaviour
     public void AssignPlayer(PlayerThrow player)
     {
         thrownBy = player;
+        pickUpCollider.enabled = false;
+        realCollider.enabled = false;
+    }
+
+    public void Thrown()
+    {
+        realCollider.enabled = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            pickUpCollider.enabled = true;
+        }
     }
 }
