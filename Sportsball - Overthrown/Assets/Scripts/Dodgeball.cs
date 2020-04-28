@@ -13,6 +13,7 @@ public class Dodgeball : MonoBehaviour
     private GameObject[] playersHit;
 
     public float myForce = 500;
+    public float myGravityDelay = .1f;
     public SphereCollider realCollider;
     public SphereCollider pickUpCollider;
 

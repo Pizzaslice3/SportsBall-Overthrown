@@ -5,12 +5,14 @@ using UnityEngine.UI;
 public class PlayerThrow : MonoBehaviour
 {
     [Header("The basics")]
-    public float currentThrowForce;
-    public float chargeSpeed;
+    //public float currentThrowForce;
+    //public float chargeSpeed;
     public float throwForce;
+    public float gravDelay;
+
     //public float throwMod;
 
-    [Header("Charge Bar")]
+    //[Header("Charge Bar")]
     //public Slider chargeSlider;
     //public Image chargeColor;
     //public Color pChargeCol, okChargeCol;
@@ -113,7 +115,7 @@ public class PlayerThrow : MonoBehaviour
 
         //Only for playtest!!!
         throwForce = currentBall.myForce;
-
+        gravDelay = currentBall.myGravityDelay;
     }
 
     //IEnumerator ChargeThrow()
@@ -171,7 +173,7 @@ public class PlayerThrow : MonoBehaviour
     /// <summary>
     /// Launches the ball in direction camera is facing
     /// </summary>
-    void ThrowBall()
+    IEnumerator ThrowBall()
     {
         print("Throwing ball");
         ballBody.isKinematic = false;
@@ -193,11 +195,10 @@ public class PlayerThrow : MonoBehaviour
         //}
 
         ballBody.AddForce(throwDirection * throwForce * Time.deltaTime);
-
-        ballBody.useGravity = true;
         currentBall.transform.parent = null;
-        currentThrowForce = 0;
 
+        yield return new WaitForSeconds(gravDelay);
+        ballBody.useGravity = true;
 
         //chargeSliderValue = currentThrowForce / 100;
         //chargeSlider.value = chargeSliderValue;
@@ -207,6 +208,4 @@ public class PlayerThrow : MonoBehaviour
         hasBall = false;
 
     }
-
-
 }
