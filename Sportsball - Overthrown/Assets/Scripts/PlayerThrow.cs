@@ -88,7 +88,7 @@ public class PlayerThrow : MonoBehaviour
             //}
             if (Input.GetMouseButtonDown(0))
             {
-                ThrowBall();
+                StartCoroutine(ThrowBall());
             }
         }
 
@@ -181,20 +181,10 @@ public class PlayerThrow : MonoBehaviour
         currentBall.transform.localPosition = new Vector3(0, 0, 2);
         currentBall.Thrown();
 
-        Vector3 throwDirection = Vector3.forward;
-        _ = Camera.main.transform.TransformDirection(throwDirection);
+        Vector3 throwDirection = Camera.main.transform.forward;
+        //throwDirection = Camera.main.transform.TransformDirection(throwDirection);
 
-        //if (currentThrowForce > sweetSpotMin && currentThrowForce < sweetSpotMax)
-        //{
-        //    ballBody.AddForce(throwDirection * throwForce * throwMod * Time.deltaTime * 100);
-
-        //}
-        //else
-        //{
-        //    ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
-        //}
-
-        ballBody.AddForce(throwDirection * throwForce * Time.deltaTime);
+        ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
         currentBall.transform.parent = null;
 
         yield return new WaitForSeconds(gravDelay);

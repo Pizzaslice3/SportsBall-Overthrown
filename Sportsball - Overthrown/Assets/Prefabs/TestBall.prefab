@@ -128,6 +128,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   alive: 0
   myForce: 500
+  myGravityDelay: 0.1
   realCollider: {fileID: 247500889175313683}
   pickUpCollider: {fileID: 7474062896091256937}
 --- !u!135 &7474062896091256937

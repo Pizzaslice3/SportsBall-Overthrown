@@ -1440,7 +1440,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (4)
+      value: Blue Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -3286,7 +3286,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (3)
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -3366,7 +3366,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 3000
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -5047,7 +5052,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (18)
+      value: Blue Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -7955,7 +7960,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (12)
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -8035,7 +8040,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 3000
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -10024,7 +10034,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (13)
+      value: Blue Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -10245,7 +10255,7 @@ Transform:
   - {fileID: 1695212165}
   - {fileID: 477445235}
   m_Father: {fileID: 1905712276}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &386533008
 Mesh:
@@ -10891,7 +10901,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (20)
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -10971,7 +10981,7 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2500
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -11577,7 +11587,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (1)
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -11657,7 +11667,7 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2500
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -12772,7 +12782,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (17)
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -12852,7 +12862,7 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2500
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -13501,7 +13511,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (16)
+      value: Green Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -13581,7 +13591,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 1800
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -13606,7 +13621,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (11)
+      value: Blue Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -15188,7 +15203,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (6)
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -15268,7 +15283,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2000
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -15621,9 +15641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c870b85d64e9098499e14754a4f15423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentThrowForce: 0
-  chargeSpeed: 1.12
   throwForce: 2000
+  gravDelay: 0
   hasBall: 0
   ballHoldPos: {x: 1.09, y: -0.07, z: 1}
   playerCam: {fileID: 712548303}
@@ -16547,7 +16566,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (15)
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -16627,7 +16646,7 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2500
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -16652,7 +16671,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (21)
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -16732,7 +16751,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2000
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -20079,7 +20103,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (3)
+      value: Green Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -20159,7 +20183,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 1800
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -20775,7 +20804,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (22)
+      value: Green Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -20855,7 +20884,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 1800
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -22255,7 +22289,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (14)
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -22335,7 +22369,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2000
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -23377,7 +23416,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -23457,7 +23496,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2000
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -25414,7 +25458,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (2)
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -25494,7 +25538,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 3000
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -28427,7 +28476,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (7)
+      value: Green Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -28437,7 +28486,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7
+      value: -3.24
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -28507,7 +28556,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 1800
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -30609,7 +30663,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (8)
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -30689,7 +30743,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 3000
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -34559,7 +34618,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (10)
+      value: Green Ball
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -34639,7 +34698,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 1800
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -35138,7 +35202,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (9)
+      value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -35218,7 +35282,7 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2500
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -38347,9 +38411,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c870b85d64e9098499e14754a4f15423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentThrowForce: 0
-  chargeSpeed: 1.12
   throwForce: 2000
+  gravDelay: 0
   hasBall: 0
   ballHoldPos: {x: 1.09, y: -0.07, z: 2}
   playerCam: {fileID: 994478831}
@@ -39124,9 +39187,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1911588356}
+  - {fileID: 2003062932}
   - {fileID: 382824474}
   - {fileID: 2084533840}
-  - {fileID: 2003062932}
   - {fileID: 1939055094}
   m_Father: {fileID: 416232999}
   m_RootOrder: 0
@@ -39410,7 +39473,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (5)
+      value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -39490,7 +39553,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 2000
+      value: 900
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -41134,7 +41202,7 @@ Transform:
   - {fileID: 917844687}
   - {fileID: 1664987645}
   m_Father: {fileID: 1905712276}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008032811
 GameObject:
@@ -41717,7 +41785,7 @@ PrefabInstance:
     - target: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: m_Name
-      value: TestBall (19)
+      value: Purple
       objectReference: {fileID: 0}
     - target: {fileID: 247500889175313774, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
@@ -41797,7 +41865,12 @@ PrefabInstance:
     - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
         type: 3}
       propertyPath: myForce
-      value: 3000
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212855320850042699, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+        type: 3}
+      propertyPath: myGravityDelay
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26b152a2cd64d7a44b4429a94e41bab0, type: 3}
@@ -41840,7 +41913,7 @@ Transform:
   - {fileID: 2074630169}
   - {fileID: 460517417}
   m_Father: {fileID: 1905712276}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2100815528
 GameObject:
