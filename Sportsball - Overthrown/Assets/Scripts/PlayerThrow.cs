@@ -192,7 +192,7 @@ public class PlayerThrow : MonoBehaviour
 
         ballThrownSFX.PlayOneShot(ballThrownSFX.clip);
 
-        yield return new WaitForSeconds(gravDelay);
+        
         ballBody.useGravity = true;
 
         //chargeSliderValue = currentThrowForce / 100;
@@ -201,6 +201,8 @@ public class PlayerThrow : MonoBehaviour
         currentBall = null;
         ballBody = null;
         hasBall = false;
+
+        yield return new WaitForSeconds(gravDelay);
 
     }
 }
