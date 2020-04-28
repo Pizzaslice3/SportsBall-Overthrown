@@ -34,6 +34,9 @@ public class PlayerThrow : MonoBehaviour
     public Image reticle;
     public Color defaultRetColor, selectedRetColor, enemyRetColor;
 
+    [Header("Player Feedback")]
+    public AudioSource ballThrownSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,7 +61,7 @@ public class PlayerThrow : MonoBehaviour
             if (hitInfo.transform.gameObject.CompareTag("Ball"))
             {
                 reticle.color = selectedRetColor;
-                print("I see a ball");
+                //print("I see a ball");
 
                 if (Input.GetMouseButtonDown(1) && !hasBall)
                 {
@@ -175,7 +178,7 @@ public class PlayerThrow : MonoBehaviour
     /// </summary>
     IEnumerator ThrowBall()
     {
-        print("Throwing ball");
+        //print("Throwing ball");
         ballBody.isKinematic = false;
 
         currentBall.transform.localPosition = new Vector3(0, 0, 2);
@@ -186,6 +189,8 @@ public class PlayerThrow : MonoBehaviour
 
         ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
         currentBall.transform.parent = null;
+
+        ballThrownSFX.PlayOneShot(ballThrownSFX.clip);
 
         yield return new WaitForSeconds(gravDelay);
         ballBody.useGravity = true;
