@@ -53,6 +53,12 @@ public class PlayerThrow : MonoBehaviour
         Controls();
     }
 
+    public void SetThrowForce(float force)
+    {
+        throwForce = force;
+        print("Throw force is now: " + throwForce);
+    }
+
     void Reticle()
     {
         bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out RaycastHit hitInfo, pickUpRange);
@@ -60,11 +66,12 @@ public class PlayerThrow : MonoBehaviour
         {
             if (hitInfo.transform.gameObject.CompareTag("Ball"))
             {
-                reticle.color = selectedRetColor;
-                //print("I see a ball");
 
-                if (Input.GetMouseButtonDown(1) && !hasBall)
+                reticle.color = selectedRetColor;
+
+                if (Input.GetButtonDown("Pick Up") && !hasBall)
                 {
+                    print("Clicked");
                     PickUpBall(hitInfo.transform.gameObject);
                 }
             }
@@ -84,15 +91,17 @@ public class PlayerThrow : MonoBehaviour
     {
         if (hasBall)
         {
+            if (Input.GetButtonDown("Throw"))
+            {
+                StartCoroutine(ThrowBall());
+            }
+
             //if (Input.GetMouseButtonDown(0))
             //{
             //    chargingUp = true;
             //    StartCoroutine(ChargeThrow());
             //}
-            if (Input.GetMouseButtonDown(0))
-            {
-                StartCoroutine(ThrowBall());
-            }
+            
         }
 
         Reticle();
@@ -116,9 +125,7 @@ public class PlayerThrow : MonoBehaviour
         currentBall.AssignPlayer(this);
 
 
-        //Only for playtest!!!
-        throwForce = currentBall.myForce;
-        gravDelay = currentBall.myGravityDelay;
+        
     }
 
     //IEnumerator ChargeThrow()

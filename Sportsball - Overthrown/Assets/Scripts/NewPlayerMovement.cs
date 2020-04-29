@@ -8,27 +8,43 @@ public class NewPlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
-    public float speed = 12f;
+    private float speed = 12f;
+    private float jumpHeight = 3f;
+    private float gravity = -9.81f;
 
-    public float gravity = -9.81f;
-
-    public Vector3 velocity;
-    public float jumpHeight = 3f;
+    private Vector3 velocity;
 
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    bool isGrounded;
+    private bool isGrounded;
 
-    public bool currentClass = false;
+    private enum Class { BASKETBALLER, SPRINTER };
+    private Class currentClass = Class.SPRINTER;
 
+    [Header("Sprinter stats")]
+    public float sprintSpeed;
+    public float sprintJump;
+    public float sprintThrow;
+
+    [Header("BasketBaller stats")]
+    public float ballerSpeed;
+    public float ballerJump;
+    public float ballerThrow;
+
+    [Header("UI")]
     public TextMeshProUGUI classText;
+
+    PlayerThrow pThrow;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pThrow = GetComponent<PlayerThrow>();
+        pThrow.SetThrowForce(sprintThrow);
+        speed = sprintSpeed;
+        jumpHeight = sprintJump;
     }
 
     // Update is called once per frame
@@ -47,6 +63,7 @@ public class NewPlayerMovement : MonoBehaviour
             velocity.y = -1f;
         }
 
+        //basic movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -54,6 +71,7 @@ public class NewPlayerMovement : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        //Jump Related
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
@@ -62,37 +80,37 @@ public class NewPlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-
     }
 
     public void ClassInformation()
     {
-        if(Input.GetKeyDown(KeyCode.X))
+        if(Input.GetButtonDown("Swap Class"))
         {
-            currentClass = !currentClass;
-
-            if (currentClass)
+            switch(currentClass)
             {
-                Sprinter();
-
+                case Class.SPRINTER:
+                    BasketBallPlayer();
+                    break;
+                case Class.BASKETBALLER:
+                    Sprinter();
+                    break;
             }
-            if (!currentClass)
-            {
-                BasketBallPlayer();
-            }
+            
         }
         
     }
 
     public void BasketBallPlayer()
     {
-
         classText.text = "Current Class: BasketBaller\n~Stats~\n-High Jump Force\n-Low Speed\n-High Throw Speed";
 
         print("isBasketBallPlayer");
-        jumpHeight = 15f;
-        speed = 9;
 
+        currentClass = Class.BASKETBALLER;
+
+        pThrow.SetThrowForce(ballerThrow);
+        speed = ballerSpeed;
+        jumpHeight = ballerJump;
 
     }
 
@@ -100,9 +118,12 @@ public class NewPlayerMovement : MonoBehaviour
     {
         classText.text =  "Current Class: Sprinter\n~Stats~\n-Low Jump Force\n-High Speed\n-Low Throw Speed";
         print("isSprinter");
-        jumpHeight = 2;
-        speed = 15f;
 
+        currentClass = Class.SPRINTER;
+
+        pThrow.SetThrowForce(sprintThrow);
+        speed = sprintSpeed;
+        jumpHeight = sprintJump;
     }
 
 }
