@@ -13,14 +13,14 @@ public class ScoreManagerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Enemies Hit" + score + "/39";
+        scoreText.text = score.ToString();
     }
 
 
     public void IncreaseScore()
     {
         score++;
-        scoreText.text = "Enemies Hit" + score + "/39";
+        scoreText.text = score.ToString();
         hitSound.PlayOneShot(hitSound.clip);
         hitAnim.SetTrigger("Hit");
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NewPlayerMovement : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class NewPlayerMovement : MonoBehaviour
     bool isGrounded;
 
     public bool currentClass = false;
+
+    public TextMeshProUGUI classText;
 
     // Start is called before the first frame update
     void Start()
@@ -83,18 +86,22 @@ public class NewPlayerMovement : MonoBehaviour
 
     public void BasketBallPlayer()
     {
+
+        classText.text = "Current Class: BasketBaller\n~Stats~\n-High Jump Force\n-Low Speed\n-High Throw Speed";
+
         print("isBasketBallPlayer");
-        jumpHeight = 12f;
-        speed = 7;
+        jumpHeight = 15f;
+        speed = 9;
 
 
     }
 
     public void Sprinter()
     {
+        classText.text =  "Current Class: Sprinter\n~Stats~\n-Low Jump Force\n-High Speed\n-Low Throw Speed";
         print("isSprinter");
-        jumpHeight = 3;
-        speed = 20f;
+        jumpHeight = 2;
+        speed = 15f;
 
     }
 
