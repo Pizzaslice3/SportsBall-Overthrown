@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 29fe5d988d4c42e43bb811d5d2cf46d6,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -38961,15 +38961,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1834219291}
-  speed: 8
+  speed: 7
   gravity: -40
   velocity: {x: 0, y: 0, z: 0}
-  jumpHeight: 3
+  jumpHeight: 12
   groundCheck: {fileID: 350945996}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  currentClass: 0
 --- !u!114 &1834219294
 MonoBehaviour:
   m_ObjectHideFlags: 0
