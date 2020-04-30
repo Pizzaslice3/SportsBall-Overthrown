@@ -22,7 +22,7 @@ public class NewPlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    private bool isGrounded;
+    public bool isGrounded;
 
     private enum Class { BASKETBALLER, SPRINTER };
     private Class currentClass = Class.SPRINTER;
@@ -52,9 +52,7 @@ public class NewPlayerMovement : MonoBehaviour
     void Start()
     {
         pThrow = GetComponent<PlayerThrow>();
-        pThrow.SetThrowForce(sprintThrow);
-        speed = sprintSpeed;
-        jumpHeight = sprintJump;
+        Sprinter();
     }
 
     // Update is called once per frame

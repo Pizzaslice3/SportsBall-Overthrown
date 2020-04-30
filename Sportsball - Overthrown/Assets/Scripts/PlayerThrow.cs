@@ -37,6 +37,8 @@ public class PlayerThrow : MonoBehaviour
     [Header("Player Feedback")]
     public AudioSource ballThrownSFX;
 
+    private NewPlayerMovement pMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +47,8 @@ public class PlayerThrow : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         reticle.color = defaultRetColor;
+
+        pMove = GetComponent<NewPlayerMovement>();
     }
 
     // Update is called once per frame
@@ -194,6 +198,12 @@ public class PlayerThrow : MonoBehaviour
         //throwDirection = Camera.main.transform.TransformDirection(throwDirection);
 
         ballBody.AddForce(throwDirection * throwForce * Time.deltaTime * 100);
+        //messy prototype code; FIX LATER
+        //if(throwForce == pMove.ballerThrow)
+        //{
+        //    ballBody.AddForce(Vector3.up * 300);
+        //}
+
         currentBall.transform.parent = null;
 
         ballThrownSFX.PlayOneShot(ballThrownSFX.clip);

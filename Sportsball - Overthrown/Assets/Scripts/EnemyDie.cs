@@ -15,7 +15,10 @@ public class EnemyDie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(SMB == null)
+        {
+            SMB = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManagerBehavior>();
+        }
     }
 
     // Update is called once per frame
