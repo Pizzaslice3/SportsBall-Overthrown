@@ -9,10 +9,13 @@ public class CatchField : MonoBehaviour
 
     private void Update()
     {
-        if(!thisBall.alive)
+        if (thisBall != null)
         {
-            touchingABall = false;
-            thisBall = null;
+            if (!thisBall.alive)
+            {
+                touchingABall = false;
+                thisBall = null;
+            }
         }
     }
     private void OnTriggerEnter(Collider other)

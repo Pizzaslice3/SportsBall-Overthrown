@@ -10,7 +10,7 @@ public class NewPlayerMovement : MonoBehaviour
 
     private float speed = 12f;
     private float jumpHeight = 3f;
-    private float gravity = -9.81f;
+    private float gravity = -35f;
     private float dodgeTime = .5f;
     private float dodgeMult = 5f;
 
