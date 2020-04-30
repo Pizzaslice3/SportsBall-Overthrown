@@ -45,6 +45,7 @@ public class Dodgeball : MonoBehaviour
     public void Thrown()
     {
         realCollider.enabled = true;
+        alive = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -52,6 +53,7 @@ public class Dodgeball : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground"))
         {
             pickUpCollider.enabled = true;
+            alive = false;
         }
     }
 }

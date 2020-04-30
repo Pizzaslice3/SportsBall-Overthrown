@@ -11,6 +11,10 @@ public class NewPlayerMovement : MonoBehaviour
     private float speed = 12f;
     private float jumpHeight = 3f;
     private float gravity = -9.81f;
+    private float dodgeTime = .5f;
+    private float dodgeMult = 5f;
+
+    private bool dodging = false;
 
     private Vector3 velocity;
 
@@ -27,16 +31,22 @@ public class NewPlayerMovement : MonoBehaviour
     public float sprintSpeed;
     public float sprintJump;
     public float sprintThrow;
+    public float sprintDodgeTime;
+    public float sprintDodgeMult;
 
     [Header("BasketBaller stats")]
     public float ballerSpeed;
     public float ballerJump;
     public float ballerThrow;
+    public float ballerDodgeTime;
+    public float ballerDodgeMult;
 
     [Header("UI")]
     public TextMeshProUGUI classText;
 
     PlayerThrow pThrow;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -62,29 +72,49 @@ public class NewPlayerMovement : MonoBehaviour
         {
             velocity.y = -1f;
         }
-
         //basic movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        controller.Move(move * speed * Time.deltaTime);
 
-        //Jump Related
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (!dodging)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            //actual movement
+            controller.Move(move * speed * Time.deltaTime);
+
+            //Jump Related
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+
+            velocity.y += gravity * Time.deltaTime;
+
+            //keeps player moving downward at all times
+            controller.Move(velocity * Time.deltaTime);
+
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        //if (Input.GetButtonDown("Dodge") && move != Vector3.zero)
+        //{
+        //    //stores value of move at that exact moment, so it can no longer be changed mid dodge
+        //    StartCoroutine(Dodge(move));
+        //}
+    }
 
-        controller.Move(velocity * Time.deltaTime);
+    private IEnumerator Dodge(Vector3 newDirection)
+    {
+        dodging = true;
+        controller.Move(newDirection * dodgeMult);
+        yield return new WaitForSeconds(dodgeTime);
+        dodging = false;
     }
 
     public void ClassInformation()
     {
-        if(Input.GetButtonDown("Swap Class"))
+        if(Input.GetButtonDown("Swap Class") && !dodging)
         {
             switch(currentClass)
             {
@@ -111,6 +141,8 @@ public class NewPlayerMovement : MonoBehaviour
         pThrow.SetThrowForce(ballerThrow);
         speed = ballerSpeed;
         jumpHeight = ballerJump;
+        dodgeTime = ballerDodgeTime;
+        dodgeMult = ballerDodgeMult;
 
     }
 
@@ -124,6 +156,8 @@ public class NewPlayerMovement : MonoBehaviour
         pThrow.SetThrowForce(sprintThrow);
         speed = sprintSpeed;
         jumpHeight = sprintJump;
+        dodgeTime = sprintDodgeTime;
+        dodgeMult = sprintDodgeMult;
     }
 
 }

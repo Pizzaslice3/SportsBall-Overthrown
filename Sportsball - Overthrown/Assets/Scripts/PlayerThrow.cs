@@ -56,7 +56,6 @@ public class PlayerThrow : MonoBehaviour
     public void SetThrowForce(float force)
     {
         throwForce = force;
-        print("Throw force is now: " + throwForce);
     }
 
     void Reticle()
