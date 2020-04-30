@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour
 
     public GameObject controls, controls2, controls3;
 
+    private void Start()
+    {
+        OpenTitle();
+    }
     public void Play()
     {
         SceneManager.LoadScene(1);
