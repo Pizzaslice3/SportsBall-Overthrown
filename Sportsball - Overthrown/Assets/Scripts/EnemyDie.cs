@@ -17,28 +17,18 @@ public class EnemyDie : MonoBehaviour
     {
         if(SMB == null)
         {
+            _rb = gameObject.GetComponent<Rigidbody>();
             SMB = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManagerBehavior>();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Ball") && hit == false)
         {
             hit = true;
-            if (_rb == null)
-            {
-                Rigidbody rb = gameObject.AddComponent(typeof(Rigidbody)) as Rigidbody;
-                _rb = rb;
-            }
 
-            if(_rb != null)
+
+            _rb.constraints = RigidbodyConstraints.None;
             _rb.AddForce(Vector3.back * 20, ForceMode.Impulse);
 
             Destroy(gameObject, .5f);
