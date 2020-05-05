@@ -7,7 +7,7 @@ public class EnemyMovement : MonoBehaviour
 
     private bool isGrounded;
     public Transform groundCheck;
-    private float groundDistance = .4f;
+    private float groundDistance = .01f;
     public LayerMask groundMask;
 
     private Vector3 velocity;
@@ -63,6 +63,8 @@ public class EnemyMovement : MonoBehaviour
         //Jump Related
         if (isGrounded)
         {
+            print("bruh");
+            isGrounded = false;
             _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
         }
     }

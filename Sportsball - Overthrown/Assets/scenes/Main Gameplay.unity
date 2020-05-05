@@ -38407,7 +38407,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 401724246, guid: 4d797abd2f60059448df8d8328f66bbf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d797abd2f60059448df8d8328f66bbf, type: 3}
 --- !u!1 &873220179
 GameObject:
@@ -81642,9 +81643,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  doesThisEnemyJump: 0
-  doesThisEnemeyMove: 1
-  jumpHeight: 90
+  doesThisEnemyJump: 1
+  doesThisEnemeyMove: 0
+  jumpHeight: 3
   movementDirection: {x: 0, y: 0, z: 1}
   movementSpeed: 2
   timeTillSwitchDirections: 1
@@ -81663,7 +81664,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!1 &2003062931
 GameObject:
   m_ObjectHideFlags: 0
