@@ -66,6 +66,7 @@ public class EnemyMovement : MonoBehaviour
             print("bruh");
             isGrounded = false;
             _rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+            isGrounded = false;
         }
     }
 
