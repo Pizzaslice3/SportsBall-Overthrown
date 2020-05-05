@@ -23,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Jump Variables")]
     public float jumpHeight = 12f;
+    public float timeTillNextJump;
 
     [Header("Movement Variables")]
     public Vector3 movementDirection;
@@ -38,12 +39,15 @@ public class EnemyMovement : MonoBehaviour
 
         if (doesThisEnemeyMove)
             InvokeRepeating("SwitchDirections", timeTillSwitchDirections, timeTillSwitchDirections);
+
+        if (doesThisEnemyJump)
+            InvokeRepeating("JumpingMovement", 0, timeTillNextJump);
     
     }
     void Update()
     {
-        if(doesThisEnemyJump)
-        JumpingMovement();
+        //if(doesThisEnemyJump)
+        //JumpingMovement();
 
         if (doesThisEnemeyMove)
          Movement();
