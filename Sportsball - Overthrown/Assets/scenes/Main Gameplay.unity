@@ -7938,6 +7938,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -10151,6 +10152,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -12554,6 +12556,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -18792,6 +18795,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -20624,6 +20628,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -23359,6 +23364,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -29713,6 +29719,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -30973,6 +30980,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -32233,6 +32241,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -33671,6 +33680,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -34836,6 +34846,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -37036,6 +37047,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -38007,6 +38019,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -39875,6 +39888,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -43414,6 +43428,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -43942,6 +43957,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -44197,6 +44213,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -44520,6 +44537,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -44727,6 +44745,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -45916,6 +45935,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -45960,6 +45980,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -49632,6 +49653,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -50236,6 +50258,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 10
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -50443,6 +50466,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -52412,6 +52436,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -53280,6 +53305,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -57135,6 +57161,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -57238,6 +57265,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -58473,6 +58501,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -60224,6 +60253,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -66034,6 +66064,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -66084,6 +66115,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -68346,6 +68378,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -68583,6 +68616,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -76593,6 +76627,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -77177,6 +77212,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
@@ -81645,7 +81681,8 @@ MonoBehaviour:
     m_Bits: 256
   doesThisEnemyJump: 1
   doesThisEnemeyMove: 0
-  jumpHeight: 3
+  jumpHeight: 14
+  timeTillNextJump: 4
   movementDirection: {x: 0, y: 0, z: 1}
   movementSpeed: 2
   timeTillSwitchDirections: 1
@@ -84464,6 +84501,7 @@ MonoBehaviour:
   doesThisEnemyJump: 0
   doesThisEnemeyMove: 0
   jumpHeight: 90
+  timeTillNextJump: 0
   movementDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 0
   timeTillSwitchDirections: 0
