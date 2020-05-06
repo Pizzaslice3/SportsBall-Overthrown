@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 610a66cc1da852d4fb5e5f86fb1b5652, type: 2}
+  - {fileID: 2100000, guid: 5784f0e63d5f4c5488bc8d0e9f962a65, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,8 +127,6 @@ MonoBehaviour:
   thrownBy: {fileID: 0}
   rb: {fileID: 0}
   alive: 0
-  myForce: 900
-  myGravityDelay: 0.5
   realCollider: {fileID: 247500889175313683}
   pickUpCollider: {fileID: 7474062896091256937}
 --- !u!135 &7474062896091256937

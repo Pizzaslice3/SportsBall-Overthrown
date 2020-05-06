@@ -20,7 +20,7 @@ public class CatchField : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("DodgeBall"))
+        if(other.gameObject.CompareTag("Ball") || other.gameObject.CompareTag("TurretBall"))
         {
             thisBall = other.gameObject.GetComponent<Dodgeball>(); 
             if(thisBall.alive)
@@ -33,7 +33,7 @@ public class CatchField : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("DodgeBall"))
+        if (other.gameObject.CompareTag("Ball") || other.gameObject.CompareTag("TurretBall"))
         {
             touchingABall = false;
             thisBall = null;

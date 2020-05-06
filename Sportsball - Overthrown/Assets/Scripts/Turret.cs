@@ -5,45 +5,28 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public GameObject ballPrefab;
-    public float shootDelay;
+    private float shootDelay;
     public GameObject player;
-    private bool playerInRange;
+    public float launchForce = 50000;
     public float destroyAfter = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    // Update is called once per frame
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject == player)
-        {
-            playerInRange = true;
-            StartCoroutine(ShootBall());
-            print("Spawning a ball");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            playerInRange = false;
-        }
+        StartCoroutine(ShootBall());
+        shootDelay = Random.Range(1f, 4f);
+        print("Shoot delay: " + shootDelay);
     }
 
     public IEnumerator ShootBall()
     {
-        while(playerInRange)
+        while(true)
         {
             GameObject newBall = Instantiate(ballPrefab,transform.position,transform.rotation);
-            newBall.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,0,1) * Time.deltaTime * 100000);
-            yield return new WaitForSeconds(shootDelay);
+            newBall.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0,0,1) * Time.deltaTime * launchForce);
             Destroy(newBall, destroyAfter);
+
+            yield return new WaitForSeconds(shootDelay);
         }
     }
 }

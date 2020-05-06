@@ -5,7 +5,6 @@ using TMPro;
 
 public class NewPlayerMovement : MonoBehaviour
 {
-
     public CharacterController controller;
 
     private float speed = 12f;
@@ -147,7 +146,6 @@ public class NewPlayerMovement : MonoBehaviour
     public void Sprinter()
     {
         classText.text =  "Current Class: Sprinter\n~Stats~\n-Low Jump Force\n-High Speed\n-Low Throw Speed";
-        print("isSprinter");
 
         currentClass = Class.SPRINTER;
 

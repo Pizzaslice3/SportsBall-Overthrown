@@ -105,10 +105,9 @@ GameObject:
   - component: {fileID: 8795350178957914360}
   - component: {fileID: 8795350178957914361}
   - component: {fileID: 8795350178957914362}
-  - component: {fileID: 8795350178957914363}
   - component: {fileID: 8795350178957914342}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,19 +189,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!65 &8795350178957914363
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8795350178957914364}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 2, z: 17.834534}
-  m_Center: {x: 0.000000059604645, y: 0, z: 8.417267}
 --- !u!114 &8795350178957914342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,8 +201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54b0344ac686d1542852257e03f18896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballPrefab: {fileID: 247500889175313682, guid: 26b152a2cd64d7a44b4429a94e41bab0,
+  ballPrefab: {fileID: 396068684151520990, guid: c76a9ea6573cdd24e8cf772edf93efb5,
     type: 3}
-  shootDelay: 3
   player: {fileID: 0}
-  destroyAfter: 1
+  launchForce: 50000
+  destroyAfter: 1.6

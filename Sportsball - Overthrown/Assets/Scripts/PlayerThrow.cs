@@ -10,16 +10,10 @@ public class PlayerThrow : MonoBehaviour
     public float throwForce;
     public float gravDelay;
 
-    //public float throwMod;
-
-    //[Header("Charge Bar")]
-    //public Slider chargeSlider;
-    //public Image chargeColor;
-    //public Color pChargeCol, okChargeCol;
-    //private bool chargingUp, chargingDown;
-    //private float chargeSliderValue;
-    //public float sweetSpotMin = 70;
-    //public float sweetSpotMax = 90;
+    [Header("Respawning")]
+    public float respawnTime;
+    private Vector3 respawnPos;
+    public bool respawning;
 
     [Header("Ball Related")]
 
@@ -42,13 +36,14 @@ public class PlayerThrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //chargeSlider.value = 0;
+        respawnPos = transform.position;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         reticle.color = defaultRetColor;
 
         pMove = GetComponent<NewPlayerMovement>();
+        print(respawnPos);
     }
 
     // Update is called once per frame
@@ -220,5 +215,20 @@ public class PlayerThrow : MonoBehaviour
 
         yield return new WaitForSeconds(gravDelay);
 
+    }
+
+    void Respawn()
+    {
+        print("Respawning");
+        transform.position = respawnPos;
+        
+    }
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.CompareTag("TurretBall"))
+        {
+            Respawn();
+        }
     }
 }
