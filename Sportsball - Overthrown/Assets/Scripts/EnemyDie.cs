@@ -15,11 +15,10 @@ public class EnemyDie : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(SMB == null)
-        {
+    
             _rb = gameObject.GetComponent<Rigidbody>();
             SMB = GameObject.FindGameObjectWithTag("GameController").GetComponent<ScoreManagerBehavior>();
-        }
+     
     }
     void OnCollisionEnter(Collision other)
     {
