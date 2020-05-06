@@ -12,7 +12,7 @@ public class PlayerThrow : MonoBehaviour
 
     [Header("Respawning")]
     public float respawnTime;
-    private Vector3 respawnPos;
+    public Vector3 respawnPos;
     public bool respawning;
 
     [Header("Ball Related")]
@@ -220,7 +220,7 @@ public class PlayerThrow : MonoBehaviour
     void Respawn()
     {
         print("Respawning");
-        transform.position = respawnPos;
+        gameObject.transform.position = respawnPos;
         
     }
 
