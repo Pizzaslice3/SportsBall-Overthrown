@@ -11444,7 +11444,7 @@ MonoBehaviour:
     -Throw balls
     to hit enemies
 
-    *Enemies can only be hit by airborn thrown balls*
+    *Enemies can only be hit by airborne thrown balls*
 
 
     <b>-Enemies
@@ -11519,7 +11519,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 390817344}
-    characterCount: 214
+    characterCount: 215
     spriteCount: 0
     spaceCount: 40
     wordCount: 36
