@@ -21,6 +21,7 @@ public class ScoreManagerBehavior : MonoBehaviour
     {
         score++;
         scoreText.text = score.ToString();
+
         hitSound.PlayOneShot(hitSound.clip);
         hitAnim.SetTrigger("Hit");
     }

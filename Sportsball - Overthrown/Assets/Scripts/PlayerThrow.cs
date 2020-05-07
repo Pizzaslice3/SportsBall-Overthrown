@@ -44,7 +44,6 @@ public class PlayerThrow : MonoBehaviour
         reticle.color = defaultRetColor;
 
         pMove = GetComponent<NewPlayerMovement>();
-        print(respawnPos);
     }
 
     // Update is called once per frame
@@ -70,7 +69,6 @@ public class PlayerThrow : MonoBehaviour
 
                 if (Input.GetButtonDown("Pick Up") && !hasBall)
                 {
-                    print("Clicked");
                     PickUpBall(hitInfo.transform.gameObject);
                 }
             }
@@ -213,8 +211,6 @@ public class PlayerThrow : MonoBehaviour
 
     void Respawn()
     {
-
-        print("Respawning");
         SceneManager.LoadScene(1);
         //gameObject.transform.position = respawnPos;
         //transform.position = respawnPos;

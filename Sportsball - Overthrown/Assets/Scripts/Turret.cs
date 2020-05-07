@@ -15,7 +15,6 @@ public class Turret : MonoBehaviour
     {
         StartCoroutine(ShootBall());
         shootDelay = Random.Range(1f, 4f);
-        print("Shoot delay: " + shootDelay);
     }
 
     public IEnumerator ShootBall()

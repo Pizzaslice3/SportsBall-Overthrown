@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject gameUI;
-    // Start is called before the first frame update
+
+    //just for protoype stuff
+    public bool canPause = false;
+
     void Start()
     {
         paused = false;
@@ -21,19 +24,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.Tab))
-        //{
-        //    if(paused)
-        //    {
-        //        UnPause();
-        //    }
-        //    else
-        //    {
-        //        Pause();
-        //    }    
-        //}
+        if (Input.GetKeyDown(KeyCode.Tab) && canPause)
+        {
+            if (paused)
+            {
+                UnPause();
+            }
+            else
+            {
+                Pause();
+            }
+        }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             EndGame();
         }

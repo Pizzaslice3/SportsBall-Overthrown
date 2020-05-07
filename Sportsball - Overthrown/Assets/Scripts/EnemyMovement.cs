@@ -12,8 +12,6 @@ public class EnemyMovement : MonoBehaviour
 
     private Vector3 velocity;
  
-    private float gravity = -35f;
-
     private Rigidbody _rb;
 
     [Header("Check boxes for what you want enemy to do")]

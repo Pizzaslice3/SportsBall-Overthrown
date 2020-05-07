@@ -131,7 +131,6 @@ public class NewPlayerMovement : MonoBehaviour
     {
         classText.text = "Current Class: BasketBaller\n~Stats~\n-High Jump Force\n-Low Speed\n-High Throw Speed";
 
-        print("isBasketBallPlayer");
 
         currentClass = Class.BASKETBALLER;
 

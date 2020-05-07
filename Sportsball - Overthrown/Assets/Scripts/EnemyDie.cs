@@ -22,18 +22,18 @@ public class EnemyDie : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Ball") && hit == false)
+        if(other.gameObject.CompareTag("Ball") && !hit)
         {
-            if(other.gameObject.GetComponent<Dodgeball>().alive == true)
+            if(other.gameObject.GetComponent<Dodgeball>().alive)
             {
                 hit = true;
 
 
                 _rb.constraints = RigidbodyConstraints.None;
                 _rb.AddForce(Vector3.back * 20, ForceMode.Impulse);
-
-                Destroy(gameObject, .5f);
                 SMB.IncreaseScore();
+                Destroy(gameObject, .5f);
+                
             }
         }
     }
