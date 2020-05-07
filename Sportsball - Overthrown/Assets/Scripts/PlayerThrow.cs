@@ -92,14 +92,7 @@ public class PlayerThrow : MonoBehaviour
             if (Input.GetButtonDown("Throw"))
             {
                 StartCoroutine(ThrowBall());
-            }
-
-            //if (Input.GetMouseButtonDown(0))
-            //{
-            //    chargingUp = true;
-            //    StartCoroutine(ChargeThrow());
-            //}
-            
+            }            
         }
 
         Reticle();
