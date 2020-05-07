@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerThrow : MonoBehaviour
 {
@@ -212,9 +213,11 @@ public class PlayerThrow : MonoBehaviour
 
     void Respawn()
     {
+
         print("Respawning");
-        gameObject.transform.position = respawnPos;
-        
+        SceneManager.LoadScene(1);
+        //gameObject.transform.position = respawnPos;
+        //transform.position = respawnPos;
     }
 
     private void OnCollisionEnter(Collision col)
