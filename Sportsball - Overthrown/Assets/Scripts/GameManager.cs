@@ -8,12 +8,11 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameUI;
 
-    //just for protoype stuff
-    public bool canPause = false;
 
     void Start()
     {
         paused = false;
+        Time.timeScale = 1;
         gameUI.SetActive(true);
         pauseMenu.SetActive(false);
 
@@ -24,11 +23,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && canPause)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (paused)
             {
-                UnPause();
+                Unpause();
             }
             else
             {
@@ -55,13 +54,15 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void UnPause()
+    public void Unpause()
     {
+        pauseMenu.SetActive(false);
         Time.timeScale = 1;
         paused = false;
 
         gameUI.SetActive(true);
-        pauseMenu.SetActive(false);
+        
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
